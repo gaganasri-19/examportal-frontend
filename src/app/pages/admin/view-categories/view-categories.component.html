@@ -1,0 +1,39 @@
+<!-- <mat-card>
+    <h1 class="ml20 mt10">All categories</h1>
+    <mat-list>
+            <mat-list-item *ngFor="let c of categories">
+           
+            <mat-icon mat-list icon>category</mat-icon> 
+            {{c['title']}}
+            
+            <div mat-line>{{c['description']}}</div>
+    
+        </mat-list-item>
+    </mat-list>
+    <div class="container text-center mt10 mb20">
+        <button routerLink="/admin/add-category" mat-raised-button color="primary">Add</button>
+    </div>
+</mat-card> -->
+
+<h1 class="ml20 mt10">All categories</h1>
+<mat-card class="mt10" *ngFor="let c of categories">
+    
+    <mat-card-header>
+        <mat-icon mat-list icon>category</mat-icon> 
+            {{c['title']}}
+        <!-- <mat-card-title>{{c['title']}}</mat-card-title> -->
+        
+    </mat-card-header>
+    <mat-card-content>
+        <p class="ml20 mt10">{{c['description']}}</p>
+    </mat-card-content>
+   <mat-card-actions>
+    <button mat-fab color="primary" class="mb70 mr20" (click)="deleteCategory(c['cid'])" style="position:absolute;right:0;">
+        <mat-icon>delete</mat-icon>
+    </button>
+   </mat-card-actions>
+</mat-card>
+<div class="container text-center mt10 mb20">
+    <button routerLink="/admin/add-category" mat-raised-button color="primary">Add</button>
+</div>
+

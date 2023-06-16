@@ -1,0 +1,48 @@
+<mat-toolbar color="primary">
+    <a
+    routerLink="/" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+    </a>
+    <span>Pariksha Sathi</span>
+    <span class="example-spacer"></span>
+    <a
+    *ngIf="!isLoggedIn"
+    [routerLink]="'/login'" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+     Login
+    </a>
+    <a 
+    *ngIf="!isLoggedIn"
+    [routerLink]="'/signup'" mat-icon-button class="example-icon favorite-icon mr40 ml50" aria-label="Example icon-button with heart icon">
+        Register
+    </a>
+
+    <!-- <ng-container
+        *nfIf="login.getUserRole()=='ADMIN'; then adminLog; else userLog"></ng-container> -->
+    
+    <ng-template [ngIf]="isLoggedIn && user && login.getUserRole()=='ADMIN'">
+        <a 
+         mat-icon-button 
+         routerLink="/admin/profile" class="example-icon favorite-icon mr40 ml50" aria-label="Example icon-button with heart icon">
+            {{user['username']}}
+        
+        </a>
+    </ng-template>
+ 
+    <ng-template [ngIf]="isLoggedIn && user && login.getUserRole()=='NORMAL'">
+        <a 
+        *ngIf="isLoggedIn && user"
+         mat-icon-button 
+         routerLink="/user-dashboard/0" class="example-icon favorite-icon mr40 ml50" aria-label="Example icon-button with heart icon">
+            {{user['username']}}
+        
+        </a>
+    </ng-template>
+
+    <a 
+    (click)="logout()"
+    *ngIf="isLoggedIn"
+     mat-icon-button class="example-icon favorite-icon mr40 ml50" aria-label="Example icon-button with heart icon">
+        Logout
+    </a>
+  </mat-toolbar>
+  

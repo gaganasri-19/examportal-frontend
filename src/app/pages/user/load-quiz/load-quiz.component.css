@@ -1,0 +1,16 @@
+.text{
+    color: rgb(55, 100, 175);
+}
+
+.truncate{
+    display: block;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.example-header-image{
+    background-image: url("/assets/question.png");
+    background-size: cover;
+}

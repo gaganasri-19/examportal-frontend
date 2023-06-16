@@ -1,0 +1,13 @@
+.text{
+    color: rgb(55,100,175);
+}
+
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .example-radio-button {
+    margin: 5px;
+  }

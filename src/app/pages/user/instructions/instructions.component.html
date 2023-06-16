@@ -1,0 +1,41 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <mat-card>
+                    <mat-card-header></mat-card-header>
+                    <mat-card-title class="ml20">
+                        Read the instructions below
+                    </mat-card-title>
+                    <mat-card-subtitle class="ml20">
+                        One more step to start
+                    </mat-card-subtitle>
+                    <mat-divider></mat-divider>
+                    <mat-card-content>
+                        <h2 class="text mt10">{{quiz.title}}</h2>
+                        <p>{{quiz.description}}</p>
+                        <mat-divider></mat-divider>
+                        <h1 class="mt10">Important Instructions</h1>
+                        <ul>
+                            <li>This quiz contains MCQ's</li>
+                            <li>There are <b>{{quiz.numberOfQuestions}} questions  </b> in this quiz</li>
+                            <li>Each question carries {{quiz.maxMarks/quiz.numberOfQuestions}} marks</li>
+                            <li>You have to submit the quiz within <b>{{quiz.numberOfQuestions}} minutes</b></li>
+                            <li>No negative marking</li>
+                            <li>You cannot resume the quiz if interrupted</li>
+                            <li>The timer will start once you click on <b>START</b> button</li>
+                            <li>Click <b>START</b> to start the quiz</li>
+                        </ul>
+                        
+
+                    </mat-card-content>
+                    <mat-card-actions>
+                        
+                        <button (click)="startQuiz()" mat-raised-button class="mb10 mt10 center" color="primary">START</button>
+                    
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

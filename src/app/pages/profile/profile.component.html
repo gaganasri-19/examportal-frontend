@@ -1,0 +1,42 @@
+<mat-card *ngIf="user">
+    <h1 class="ml20">Your Profile Details</h1>
+    <mat-card-content>
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div class="container text-center">
+                     <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg"
+                     alt=" "
+                     class="profile-image"/>
+
+                     <span *ngIf="user"><h1 class="mt20">{{user['firstName']}}  {{user['lastName']}}</h1></span>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <table class="table text-center">
+                            <tr *ngIf="user['username']">
+                                <td>Username</td>
+                                <td>{{user['username']}}</td>
+                            </tr>
+                            <tr  *ngIf="user['id']">
+                                <td>UserID</td>
+                                <td>EXAM{{user['id']}}</td>
+                            </tr>
+                            <tr *ngIf="user['authorities']">
+                                <td>Role</td>
+                                <td>{{user['authorities'][0]['authority']}}</td>
+                            </tr>
+                            <tr  *ngIf="user['enabled']">
+                                <td>Status</td>
+                                <td>{{user['enabled']?"ACTIVE":"NOT ACTIVE"}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions class="m">
+        <button mat-raised-button color="primary">Update</button>
+        <button class="ml10"mat-raised-button color="primary">Share</button>
+    </mat-card-actions>
+</mat-card>
